@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is already logged in, redirect to dashboard if true
 if (isset($_SESSION['username'])) {
-  header("location: dashboard.php");
+  header("location: index.html");
   exit();
 }
 
