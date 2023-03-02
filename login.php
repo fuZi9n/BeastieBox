@@ -10,7 +10,7 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
             if($username == "myusername" && $password == "mypassword") {
-                header("Location: index.html");
+                header("Location: /HTML/index.html");
                 exit();
             } else {
                 echo "Invalid username or password.";
