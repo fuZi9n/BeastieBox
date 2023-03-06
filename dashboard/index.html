@@ -38,6 +38,30 @@
         color: #0066cc;
         text-align: center;
       }
+
+      a.button3{
+        display:inline-block;
+        padding:0.3em 1.2em;
+        margin:0 0.3em 0.3em 0;
+        border-radius:2em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#FFFFFF;
+        background-color:#4eb5f1;
+        text-align:center;
+        transition: all 0.2s;
+      }
+      a.button3:hover{
+        background-color:#4095c6;
+      }
+      @media all and (max-width:30em){
+      a.button3{
+        display:block;
+        margin:0.2em auto;
+      }
+      }
     </style>
   </head>
   <body>
@@ -48,8 +72,7 @@
       </div>
       <div class="box">
         <h3>Feed</h3>
-        <button style="background-color: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
-          Feed your animal
+        <a href="index.html" class="button3">Feed Your animal</a>
         </button>
       </div>
       <div class="box">
