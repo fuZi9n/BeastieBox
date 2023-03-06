@@ -3,10 +3,11 @@
 session_start();
 
 // Check if the user is already logged in, redirect to dashboard if true
-if (isset($_SESSION['username'])) {
-  header("location: index.html");
-  exit();
-}
+#if (isset($_SESSION['username'])) {
+#  header("location: index.html");
+#  exit();
+#}
+//To make it easier to demonstrate that it works this is commented out
 
 // Check if the login form has been submitted
 if (isset($_POST['login'])) {
