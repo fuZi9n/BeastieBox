@@ -5,6 +5,9 @@
     <style>
       body {
         font-family: Arial, sans-serif;
+        padding: 25px;
+        background-color: white;
+        color: black;
       }
       .container {
         display: flex;
@@ -61,23 +64,36 @@
         display:block;
         margin:0.2em auto;
       }
-      }
+    }
     </style>
   </head>
   <body>
+
+    
+    <script>
+      function darkmode() {
+        var element = document.body;
+        element.classList.toggle("/css/dark-mode.css");
+      }
+      </script>
+
     <div class="container">
-      <div class="box">
+      <div class="box">        
         <h3>Live Camera</h3>
         <p>Does Something</p>
+        <button onclick="darkmode()">Toggle dark mode</button>
       </div>
+
       <div class="box">
         <h3>Feed</h3>
         <a href="index.html" class="button3">Feed Your animal</a>
       </div>
+
       <div class="box">
         <h3>Tracking</h3>
         <p>Does Something</p>
       </div>
+      
     </div>
   </body>
 </html>

@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
     $_SESSION['username'] = $username;
 
     // Redirect to the dashboard
-    header("location: index.html");
+    header("location: /dashboard/index.html");
     exit();
   } else {
     // If the username and password are not correct, show an error message
