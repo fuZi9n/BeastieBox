@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 25px;
+    background-color: white;
+    color: black;
+  }
+  .dark-mode {
+  background-color: #121212;
+  color: white;
+  }
+  
+  .dark-button {
+    line-height: 12px;
+     width: 18px;
+     font-size: 8pt;
+     font-family: tahoma;
+     margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     top:0;
+     right:0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 800px;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    height: 200px;
+  }
+  .box h3 {
+    margin: 0;
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+  }
+  .box p {
+    margin: 10px 0 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0066cc;
+    text-align: center;
+  }
+
+  a.button3{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#0066cc;
+    text-align:center;
+    transition: all 0.2s;
+  }
+  a.button3:hover{
+    background-color:#0066cc;
+  }
+  @media all and (max-width:30em){
+  a.button3{
+    display:block;
+    margin:0.2em auto;
+  }
+}
