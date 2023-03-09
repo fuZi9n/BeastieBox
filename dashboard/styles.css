@@ -3,8 +3,9 @@ body {
     padding: 25px;
     background-color: white;
     color: black;
+    transition: background 0.2s linear;
   }
-  .dark-mode {
+    .dark-mode {
   background-color: #121212;
   color: white;
   }
