@@ -108,7 +108,6 @@
   <main>
     <section class="container wrapper">
       <h2 class="display-4 pt-3">Login</h2>
-          <p class="text-center">Please fill this form to create an account.</p>
           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <div class="form-group <?php (!empty($username_err))?'has_error':'';?>">
               <label for="username">Username</label>
@@ -125,7 +124,7 @@
             <div class="form-group">
               <input type="submit" class="btn btn-block btn-outline-primary" value="login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign in</a>.</p>
+            <p>Don't have an account? <a href="register.php">Sign Up</a>.</p>
           </form>
     </section>
   </main>
