@@ -39,21 +39,22 @@
 		</section>
 	</main>
 
-	<div class="box">
-        <h3>Feed</h3>
-        <a href="#" class="button3">Feed Your animal</a>
-    </div>
-
     <div class="container">
-      <div class="box">        
-        <h3>Live Camera</h3>
-        <p>Video of monke coming soon</p>
-      </div>
+      
+		<div class="box">
+        	<h3>Feed</h3>
+        	<a href="#" class="button3">Feed Your animal</a>
+		</div>
+	
+		<div class="box">        
+        	<h3>Live Camera</h3>
+        	<p>Video of monke coming soon</p>
+    	</div>
 
-      <div class="box">
-        <h3>Tracking</h3>
-        <p>Does Something</p>
-      </div>
+    	<div class="box">
+        	<h3>Tracking</h3>
+    		<p>Does Something</p>
+    	</div>
     </div>
 
 </body>
