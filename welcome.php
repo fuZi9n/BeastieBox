@@ -36,6 +36,8 @@
 			</div>
 			<a href="password_reset.php" class="btn btn-block btn-outline-warning">Reset Password</a>
 			<a href="logout.php" class="btn btn-block btn-outline-danger">Sign Out</a>
+
+			
 		</section>
 	</main>
 
