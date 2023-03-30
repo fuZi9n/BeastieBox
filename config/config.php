@@ -1,7 +1,7 @@
 <?php
 	// Database credentials
 	define('DB_SERVER', '38.242.128.50');
-	define('DB_USERNAME', 'root');
+	define('DB_USERNAME', 'bruger');
 	define('DB_PASSWORD', 'Kode1234!');
 	define('DB_NAME', 'login_system');
 
