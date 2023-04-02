@@ -43,7 +43,7 @@
       
 		<div class="box">
         	<h3>Feed</h3>
-        	<a href="#" class="button3">Feed Your animal</a>
+        	<button type="button" class="btn btn-outline-primary">Feed your animal</button>
 		</div>
 	
 		<div class="box">        
