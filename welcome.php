@@ -55,6 +55,11 @@
         	<h3>Tracking</h3>
     		<p>Does Something</p>
     	</div>
+
+		<div class="box">
+        	<h3>Heartbeat Sensor</h3>
+    		<p>yes</p>
+    	</div>
     </div>
 
 </body>
