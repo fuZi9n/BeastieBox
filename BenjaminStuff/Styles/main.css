@@ -121,7 +121,14 @@
 
 
 
-
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
 
 .pulse-stat {
     font-size: 1rem;
