@@ -15,7 +15,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 	<title>BeastieBox Feed & Watch</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
-	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="index.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -48,8 +48,8 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 						<div class="centerFeeding">
 							<button id="feedingBtn">Feed your animal</button>
 							<div id="gearsContainer">
-								<img src="images/gear.png" id="bigGear" class="hidden" alt="big gear">
-								<img src="images/gear.png" id="smallGear" class="hidden" alt="small gear">
+								<img src="Images/gear.png" id="bigGear" class="hidden" alt="big gear">
+								<img src="Images/gear.png" id="smallGear" class="hidden" alt="small gear">
 							</div>
 						</div>
 					</div>
@@ -61,7 +61,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 						<h3>Live Camera</h3>
 						<p>Video of monke coming soon</p>
 						<video id="liveCamera" controls loop muted>
-							<source src="./Videos/Dogs.mp4" type="video/mp4">
+							<source src="Videos/Dogs.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
 					</div>
