@@ -26,7 +26,7 @@
    		top: -16px;
    		right: -706px;
 		}
-	</style>
+</style>
 </head>
 <body>
 	<main>
@@ -66,4 +66,5 @@
       <center><p>&copy; 2023 BeastieBox</p></center>
     </footer>
 </body>
+</html>
 </html>
