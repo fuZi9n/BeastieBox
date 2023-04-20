@@ -16,17 +16,24 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
     <link rel="stylesheet" href="Styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <header class="container">
-        <h2 class="display-5 text-center">Welcome back
-            <?php echo $_SESSION['username']; ?>
-        </h2>
-        <div class="text-center mb-4">
-            <a href="password_reset.php" class="btn btn-outline-warning">Reset Password</a>
-            <a href="logout.php" class="btn btn-outline-danger">Sign Out</a>
+    <nav class="navbar">
+        <div class="container">
+            <span class="navbar-brand mx-auto">BeastyBox</span>
         </div>
+    </nav>
+
+    <header class="container">
+        <h3 class="display-5 text-center"> Welcome
+            <?php echo $_SESSION['username']; ?>!
+            </h2>
+            <div class="text-center mb-4">
+                <a href="password_reset.php" class="btn btn-outline-warning">Reset Password</a>
+                <a href="logout.php" class="btn btn-outline-danger">Sign Out</a>
+            </div>
     </header>
 
     <div id="darkModeToggle" class="dark-mode-toggle">
@@ -35,9 +42,9 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 
     <main>
         <div class="container">
-            <div class="row">
+            <div class="row equal-height mb-30">
                 <div class="col-md-6">
-                    <div class="box mb-4">
+                    <div class="box mb-4 full-height">
                         <h3>Heartbeat Sensor</h3>
                         <h5>(Poppy 1):</h5>
                         <div id="cardiogramContainer">
@@ -47,13 +54,18 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="box">
+                    <div class="box full-height">
                         <h3>Feed</h3>
-                        <div class="centerFeeding">
-                            <button id="feedingBtn">Feed your animal</button>
-                            <div id="gearsContainer">
-                                <img src="Images/gear.png" id="bigGear" class="hidden" alt="big gear">
-                                <img src="Images/gear.png" id="smallGear" class="hidden" alt="small gear">
+                        <div class="center-vertically">
+                            <div class="chart-container" style="position: relative; height: 200px;">
+                                <canvas id="foodChart"></canvas>
+                            </div>
+                            <div class="centerFeeding">
+                                <button id="feedingBtn">Feed your animal</button>
+                                <div id="gearsContainer">
+                                    <img src="Images/gear.png" id="bigGear" class="hidden" alt="big gear">
+                                    <img src="Images/gear.png" id="smallGear" class="hidden" alt="small gear">
+                                </div>
                             </div>
                         </div>
                     </div>

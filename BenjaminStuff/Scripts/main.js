@@ -93,3 +93,65 @@ function updatePulse() {
 updatePulse();
 drawCardiogram(); // Initial call
 setInterval(updatePulse, 2000); // Update pulse every 2 seconds
+
+
+
+
+
+const foodChartElement = document.getElementById('foodChart');
+let foodData = Array(3).fill(0);
+
+function createFoodChart() {
+    return new Chart(foodChartElement, {
+        type: 'bar',
+        data: {
+            labels: ['Feeder 1', 'Feeder 2', 'Feeder 3',]
+            , datasets: [
+                {
+                    label: 'Food Level',
+                    data: foodData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            }
+        }
+    });
+}
+
+const foodChart = createFoodChart();
+
+feedingBtn.addEventListener('click', () => {
+    for (let i = 0; i < foodData.length; i++) {
+        foodData[i] += 10;
+        if (foodData[i] > 100) {
+            foodData[i] = 100;
+        }
+    }
+    foodChart.update();
+});
+
+function getRandomValue(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function decreaseFoodData() {
+    const index = getRandomValue(0, foodData.length - 1);
+    const decreaseValue = getRandomValue(1, 10);
+    foodData[index] -= decreaseValue;
+    if (foodData[index] < 0) {
+        foodData[index] = 0;
+    }
+    foodChart.update();
+}
+
+
+setInterval(decreaseFoodData, 2000);
