@@ -15,7 +15,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
 	<title>BeastieBox Feed & Watch</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
-		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="Styles/main.css">
 </head>
 
 <body>
@@ -90,7 +90,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="Scripts/main.js"></script>
 </body>
 </html>
 </html>

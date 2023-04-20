@@ -129,7 +129,7 @@
     </section>
   </main>
     <footer>
-    <center>
+      <center>
 			<p>&copy; 2023 BeastieBox</p>
 		</center>
     </footer>
