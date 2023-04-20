@@ -40,8 +40,8 @@ cardiogramCanvas.width = cardiogramCanvas.clientWidth;
 cardiogramCanvas.height = cardiogramCanvas.clientHeight;
 
 let cardiogramPoints = [];
-let cardiogramSpeed = 1;
-let frequency = 2;
+let cardiogramSpeed = 0.5;
+let frequency = 4;
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -69,10 +69,12 @@ function drawCardiogram() {
     for (let i = 1; i < cardiogramPoints.length; i++) {
         const point = cardiogramPoints[i];
 
-        ctx.beginPath();
-        ctx.moveTo(cardiogramPoints[i - 1].x, cardiogramPoints[i - 1].y);
-        ctx.lineTo(point.x, point.y);
-        ctx.stroke();
+        if (i !== 1) {
+            ctx.beginPath();
+            ctx.moveTo(cardiogramPoints[i - 1].x, cardiogramPoints[i - 1].y);
+            ctx.lineTo(point.x, point.y);
+            ctx.stroke();
+        }
 
         point.x -= cardiogramSpeed;
     }
