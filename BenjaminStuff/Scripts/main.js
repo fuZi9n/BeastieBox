@@ -41,8 +41,8 @@ cardiogramCanvas.width = cardiogramCanvas.clientWidth;
 cardiogramCanvas.height = cardiogramCanvas.clientHeight;
 
 let cardiogramPoints = [];
-let cardiogramSpeed = 0.5;
-let frequency = 4;
+let cardiogramSpeed = 0.2;
+let frequency = 6;
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -66,23 +66,24 @@ function drawCardiogram() {
 
     ctx.strokeStyle = 'red';
     ctx.lineWidth = 2;
+    ctx.beginPath();
 
     for (let i = 1; i < cardiogramPoints.length; i++) {
         const point = cardiogramPoints[i];
 
+        point.x -= cardiogramSpeed;
+
         if (i !== 1) {
-            ctx.beginPath();
             ctx.moveTo(cardiogramPoints[i - 1].x, cardiogramPoints[i - 1].y);
             ctx.lineTo(point.x, point.y);
-            ctx.stroke();
         }
-
-        point.x -= cardiogramSpeed;
     }
 
+    ctx.stroke();
     cardiogramPoints = cardiogramPoints.filter((point) => point.x > 0);
-}
 
+    requestAnimationFrame(drawCardiogram);
+}
 
 function updatePulse() {
     const pulse = getRandomInt(60, 100);
@@ -90,5 +91,5 @@ function updatePulse() {
 }
 
 updatePulse();
-setInterval(drawCardiogram, 1000 / 60); // 60 FPS
+drawCardiogram(); // Initial call
 setInterval(updatePulse, 2000); // Update pulse every 2 seconds
