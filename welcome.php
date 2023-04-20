@@ -54,7 +54,7 @@
     	<div class="box">
         	<h3>Tracking</h3>
     		<p>This is the current location of your pet</p>
-			<iframe <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7599.498421511662!2d11.78619609021041!3d55.42899236355266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465291dc59296cb1%3A0x8d7ff03e471a3f91!2sZBC%20Ringsted!5e1!3m2!1sen!2sdk!4v1681974783613!5m2!1sen!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>></iframe>
+			<iframe <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7599.498421511662!2d11.78619609021041!3d55.42899236355266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465291dc59296cb1%3A0x8d7ff03e471a3f91!2sZBC%20Ringsted!5e1!3m2!1sen!2sdk!4v1681974783613!5m2!1sen!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></iframe>
     	</div>
 
 		<div class="box">
