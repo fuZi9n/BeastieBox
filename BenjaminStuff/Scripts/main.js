@@ -1,3 +1,4 @@
+// Feeding button animation
 const feedingBtn = document.getElementById('feedingBtn');
 const bigGear = document.getElementById('bigGear');
 const smallGear = document.getElementById('smallGear');
@@ -20,7 +21,7 @@ feedingBtn.addEventListener('click', () => {
 
 
 
-
+// Dark mode toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.querySelector('body');
 
@@ -33,6 +34,8 @@ darkModeToggle.addEventListener('click', () => {
 
 
 
+
+// Cardiogram animation
 const cardiogramCanvas = document.getElementById('cardiogramCanvas');
 const ctx = cardiogramCanvas.getContext('2d');
 const pulseValue = document.getElementById('pulseValue');
@@ -98,6 +101,7 @@ setInterval(updatePulse, 2000); // Update pulse every 2 seconds
 
 
 
+// Food chart
 const foodChartElement = document.getElementById('foodChart');
 let foodData = Array(3).fill(0);
 
@@ -152,6 +156,5 @@ function decreaseFoodData() {
     }
     foodChart.update();
 }
-
 
 setInterval(decreaseFoodData, 2000);
