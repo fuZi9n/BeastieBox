@@ -59,7 +59,7 @@
 }
 
 #feedingBtn {
-    background-color: #0066ff;
+    background-color: #ff0000;
     /* Red color */
     border: none;
     color: white;
@@ -71,7 +71,7 @@
 }
 
 #feedingBtn:hover {
-    background-color: #00ff4c;
+    background-color: #3700ff;
     /* Darker red color on hover */
 }
 
