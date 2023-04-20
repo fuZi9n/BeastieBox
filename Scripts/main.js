@@ -99,10 +99,14 @@ function drawCardiogram() {
 }
 
 function updatePulse() {
-    const pulse = getRandomInt(60, 100);
+    const pulse = getRandomInt(50, 100);
     pulseValue.innerText = pulse;
 
     // Update pulse statistics
+    if (pulseValues.length >= 100) {
+        const oldestPulse = pulseValues.shift();
+        sumPulseValues -= oldestPulse;
+    }
     pulseValues.push(pulse);
     pulseCount++;
     minPulseValue = Math.min(minPulseValue, pulse);
@@ -110,7 +114,7 @@ function updatePulse() {
     sumPulseValues += pulse;
 
     // Display updated pulse statistics
-    avgPulse.innerText = (sumPulseValues / pulseCount).toFixed(1);
+    avgPulse.innerText = (sumPulseValues / pulseValues.length).toFixed(1);
     minPulse.innerText = minPulseValue;
     maxPulse.innerText = maxPulseValue;
 }
