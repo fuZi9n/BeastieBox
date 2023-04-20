@@ -184,3 +184,25 @@ function decreaseFoodData() {
 }
 
 setInterval(decreaseFoodData, 2000);
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all the necessary elements
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarMenu = document.querySelector(".navbar-collapse");
+
+    // Attach a click event listener to the navbar toggler
+    navbarToggler.addEventListener("click", function () {
+        navbarMenu.classList.toggle("show");
+    });
+
+    // Close the menu when a link is clicked
+    navbarMenu.addEventListener("click", function (event) {
+        if (event.target.classList.contains("nav-link")) {
+            navbarMenu.classList.remove("show");
+        }
+    });
+});
