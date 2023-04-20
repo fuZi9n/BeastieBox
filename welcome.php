@@ -20,7 +20,6 @@
         }
         .wrapper h2 {text-align: center}
         .wrapper form .form-group span {color: red;}
-
 		.ribbon {
    		position: relative;
    		top: -16px;
