@@ -1,3 +1,12 @@
+<?php
+// Initialize session
+session_start();
+
+if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
+    header('location: login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +22,9 @@
 <body>
     <nav class="navbar">
         <div class="container">
+            <div id="darkModeToggle" class="dark-mode-toggle">
+                <div class="circle"></div>
+            </div>
             <span class="navbar-brand mx-auto">BeastyBox</span>
         </div>
     </nav>
@@ -27,24 +39,29 @@
             </div>
     </header>
 
-    <div id="darkModeToggle" class="dark-mode-toggle">
-        <div class="circle"></div>
-    </div>
-
     <main>
         <div class="container">
-            <div class="row equal-height mb-30">
-                <div class="col-md-6">
+            <div class="row equal-height">
+                <div class="col-md-6 mb-30">
                     <div class="box mb-4 full-height">
                         <h3>Heartbeat Sensor</h3>
-                        <h5>(Poppy 1):</h5>
+                        <div class="header-container">
+                            <h5>(Poppy 1):</h5>
+                            <div class="pulse-container">
+                                <p id="pulse"><span id="pulseValue">--</span> BPM</p>
+                            </div>
+                        </div>
                         <div id="cardiogramContainer">
                             <canvas id="cardiogramCanvas"></canvas>
                         </div>
-                        <p id="pulse">Pulse: <span id="pulseValue">--</span> BPM</p>
+                        <div id="pulseStats" class="d-flex justify-content-between">
+                            <div class="pulse-stat">Avg: <span id="avgPulse">--</span> BPM</div>
+                            <div class="pulse-stat">Min: <span id="minPulse">--</span> BPM</div>
+                            <div class="pulse-stat">Max: <span id="maxPulse">--</span> BPM</div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-30">
                     <div class="box full-height">
                         <h3>Feed</h3>
                         <div class="center-vertically">
@@ -98,6 +115,7 @@
     </footer>
 
     <script src="Scripts/main.js"></script>
+    <script src="Scripts/heartbeatSensor.js"></script>
 </body>
 
 </html>

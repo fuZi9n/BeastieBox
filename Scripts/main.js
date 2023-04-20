@@ -1,3 +1,4 @@
+// Feeding button animation
 const feedingBtn = document.getElementById('feedingBtn');
 const bigGear = document.getElementById('bigGear');
 const smallGear = document.getElementById('smallGear');
@@ -20,7 +21,7 @@ feedingBtn.addEventListener('click', () => {
 
 
 
-
+// Dark mode toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.querySelector('body');
 
@@ -33,12 +34,24 @@ darkModeToggle.addEventListener('click', () => {
 
 
 
+
+// Cardiogram animation
+const avgPulse = document.getElementById('avgPulse');
+const minPulse = document.getElementById('minPulse');
+const maxPulse = document.getElementById('maxPulse');
+
 const cardiogramCanvas = document.getElementById('cardiogramCanvas');
 const ctx = cardiogramCanvas.getContext('2d');
 const pulseValue = document.getElementById('pulseValue');
 
 cardiogramCanvas.width = cardiogramCanvas.clientWidth;
 cardiogramCanvas.height = cardiogramCanvas.clientHeight;
+
+let pulseValues = [];
+let minPulseValue = Number.MAX_VALUE;
+let maxPulseValue = Number.MIN_VALUE;
+let sumPulseValues = 0;
+let pulseCount = 0;
 
 let cardiogramPoints = [];
 let cardiogramSpeed = 0.2;
@@ -88,6 +101,18 @@ function drawCardiogram() {
 function updatePulse() {
     const pulse = getRandomInt(60, 100);
     pulseValue.innerText = pulse;
+
+    // Update pulse statistics
+    pulseValues.push(pulse);
+    pulseCount++;
+    minPulseValue = Math.min(minPulseValue, pulse);
+    maxPulseValue = Math.max(maxPulseValue, pulse);
+    sumPulseValues += pulse;
+
+    // Display updated pulse statistics
+    avgPulse.innerText = (sumPulseValues / pulseCount).toFixed(1);
+    minPulse.innerText = minPulseValue;
+    maxPulse.innerText = maxPulseValue;
 }
 
 updatePulse();
@@ -98,6 +123,7 @@ setInterval(updatePulse, 2000); // Update pulse every 2 seconds
 
 
 
+// Food chart
 const foodChartElement = document.getElementById('foodChart');
 let foodData = Array(3).fill(0);
 
@@ -152,6 +178,5 @@ function decreaseFoodData() {
     }
     foodChart.update();
 }
-
 
 setInterval(decreaseFoodData, 2000);

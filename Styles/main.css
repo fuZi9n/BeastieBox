@@ -1,3 +1,40 @@
+.pulse-stat {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#pulseStats {
+    margin-top: 10px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pulse-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #f8f9fa;
+    background-color: #ff5959;
+    border: 1px solid #dee2e6;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .pulse-container {
+    background-color: #1c242c;
+    border: 1px solid #495057;
+    color: #f8f9fa;
+    transition: background-color 0.3s;
+}
+
 .chart-container {
     margin-bottom: 20px;
 }
@@ -74,6 +111,14 @@
     animation-duration: 1.5s;
 }
 
+.dark-mode #bigGear {
+    filter: invert(0.7);
+}
+
+.dark-mode #smallGear {
+    filter: invert(0.7);
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -85,8 +130,24 @@
 }
 
 #feedingBtn {
-    background-color: #0066ff;
-    /* Red color */
+    background-color: #0077ff;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+#feedingBtn:hover {
+    background-color: #25c457;
+}
+
+.dark-mode #feedingBtn {
+    background-color: #475b72;
     border: none;
     color: white;
     font-size: 1rem;
@@ -96,16 +157,14 @@
     transition: background-color 0.3s;
 }
 
-#feedingBtn:hover {
-    background-color: #00ad34;
-    /* Darker red color on hover */
+.dark-mode #feedingBtn:hover {
+    background-color: #32884d;
 }
 
 /* Dark Mode Toggle */
 .dark-mode-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 30px;
+    left: 30px;
     width: 50px;
     height: 25px;
     background-color: #ccc;
@@ -115,6 +174,7 @@
     align-items: center;
     transition: background-color 0.3s;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
     /* Add shadow to make it more visible */
 }
 
