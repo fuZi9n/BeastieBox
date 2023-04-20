@@ -1,12 +1,3 @@
-<?php
-// Initialize session
-session_start();
-
-if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
-    header('location: login.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +52,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <canvas id="foodChart"></canvas>
                             </div>
                             <div class="centerFeeding">
-                                <button id="feedingBtn">Feed your animal</button>
+                                <button id="feedingBtn">Feeding time!</button>
                                 <div id="gearsContainer">
                                     <img src="Images/gear.png" id="bigGear" class="hidden" alt="big gear">
                                     <img src="Images/gear.png" id="smallGear" class="hidden" alt="small gear">
@@ -75,7 +66,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                 <div class="col-md-12">
                     <div class="box">
                         <h3>Live Camera</h3>
-                        <p>Live feed from your camera: Living Room 1</p>
+                        <p>Live feed from your camera: (Living Room 1)</p>
                         <video id="liveCamera" controls loop muted>
                             <source src="Videos/Dogs.mp4" type="video/mp4">
                             Your browser does not support the video tag.
