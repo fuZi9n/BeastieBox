@@ -53,7 +53,7 @@
 
     	<div class="box">
         	<h3>Tracking</h3>
-    		<p>Does Something</p>
+    		<p>picture of map</p>
     	</div>
 
 		<div class="box">
