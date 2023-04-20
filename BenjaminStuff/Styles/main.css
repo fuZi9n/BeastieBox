@@ -126,3 +126,11 @@ body.dark-mode {
     border: 1px solid #495057;
     color: #f8f9fa;
 }
+
+#liveCamera {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
