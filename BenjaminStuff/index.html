@@ -2,21 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gear Animation</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeastieBox Feed & Watch</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-    <div class="centerFeeding">
-        <button id="feedingBtn">Feed your animal</button>
-        <div id="gearsContainer">
-            <img src="gear.png" id="bigGear" class="hidden" alt="big gear">
-            <img src="gear.png" id="smallGear" class="hidden" alt="small gear">
+    <header class="container">
+        <h2 class="display-5 text-center">Welcome back
+            <?php echo $_SESSION['username']; ?>
+        </h2>
+        <div class="text-center mb-4">
+            <a href="password_reset.php" class="btn btn-outline-warning">Reset Password</a>
+            <a href="logout.php" class="btn btn-outline-danger">Sign Out</a>
         </div>
+    </header>
+
+    <div id="darkModeToggle" class="dark-mode-toggle">
+        <div class="circle"></div>
     </div>
-    <script src="script.js"></script>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box mb-4">
+                        <h3>Heartbeat Sensor</h3>
+                        <p>yes</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box">
+                        <h3>Feed</h3>
+                        <div class="centerFeeding">
+                            <button id="feedingBtn">Feed your animal</button>
+                            <div id="gearsContainer">
+                                <img src="gear.png" id="bigGear" class="hidden" alt="big gear">
+                                <img src="gear.png" id="smallGear" class="hidden" alt="small gear">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <h3>Live Camera</h3>
+                        <p>Video of monke coming soon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <h3>Tracking</h3>
+                        <p>This is the current location of your pet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <center>
+                <p>&copy; 2023 BeastieBox</p>
+            </center>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

@@ -15,3 +15,11 @@ feedingBtn.addEventListener('click', () => {
         smallGear.classList.add('hidden');
     }, 3000);
 });
+
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.querySelector('body');
+
+darkModeToggle.addEventListener('click', () => {
+    darkModeToggle.classList.toggle('active');
+    body.classList.toggle('dark-mode');
+});
