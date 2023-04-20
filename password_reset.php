@@ -108,7 +108,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
             </form>
         </section>
-    </main>    
+    </main>  
+    <footer>
+      <p>&copy; 2023 Benjamin & Hjalte</p>
+    </footer> 
 </body>
 
 </html>

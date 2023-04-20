@@ -151,5 +151,8 @@
         	</form>
 		</section>
 	</main>
+	<footer>
+      <p>&copy; 2023 Benjamin & Hjalte</p>
+    </footer>
 </body>
 </html>
