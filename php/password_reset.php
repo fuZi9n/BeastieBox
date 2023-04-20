@@ -110,7 +110,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         </section>
     </main>  
     <footer>
-      <p>&copy; 2023 BeastieBox</p>
+    <center>
+		<p>&copy; 2023 BeastieBox</p>
+	</center>
     </footer> 
 </body>
 
