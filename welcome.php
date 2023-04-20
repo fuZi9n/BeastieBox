@@ -63,7 +63,7 @@
     	</div>
     </div>
 	<footer>
-      <p>&copy; 2023 Benjamin & Hjalte</p>
+      <center><p>&copy; 2023 BeastieBox</p></center>
     </footer>
 </body>
 </html>
