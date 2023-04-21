@@ -32,6 +32,31 @@
     margin-bottom: 10px;
 }
 
+
+#hamburger-button:hover {
+    background-color: #8080801f;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#hamburger-button:active {
+    background-color: #2e2e2e1f;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.dark-mode #hamburger-button:hover {
+    background-color: #8f8f8f1f;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.dark-mode #hamburger-button:active {
+    background-color: #6666661f;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
 .navbar-toggler {
     border: none;
 }

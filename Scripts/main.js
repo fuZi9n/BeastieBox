@@ -21,6 +21,8 @@ feedingBtn.addEventListener('click', () => {
 
 
 
+
+
 // Dark mode toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.querySelector('body');
@@ -29,6 +31,7 @@ darkModeToggle.addEventListener('click', () => {
     darkModeToggle.classList.toggle('active');
     body.classList.toggle('dark-mode');
 });
+
 
 
 
@@ -127,6 +130,8 @@ setInterval(updatePulse, 2000); // Update pulse every 2 seconds
 
 
 
+
+
 // Food chart
 const foodChartElement = document.getElementById('foodChart');
 let foodData = Array(3).fill(0);
@@ -184,6 +189,9 @@ function decreaseFoodData() {
 }
 
 setInterval(decreaseFoodData, 2000);
+
+
+
 
 
 
