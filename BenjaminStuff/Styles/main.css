@@ -27,9 +27,10 @@
 
 
 
-
-
-
+#hamburger-button {
+    outline: none;
+    margin-bottom: 10px;
+}
 
 .navbar-toggler {
     border: none;
@@ -85,27 +86,69 @@
     display: block;
     padding: 0.5em 1em;
     text-decoration: none;
-    color: inherit;
+    color: #000000;
+    border-radius: 4px;
+    text-align: center;
+    padding-left: 500px;
+    padding-right: 500px;
+    transition: background-color 0.3s;
+}
+
+.dark-mode .nav-link {
+    color: #f8f9fa;
 }
 
 .nav-link:hover {
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(163, 163, 163, 0.082);
+    color: #0077ff;
+    font-weight: bold;
+}
+
+.dark-mode .nav-link:hover {
+    color: #2088ff;
+    font-weight: bold;
+}
+
+#signout:hover {
+    color: #ca5555;
+    font-weight: bold;
 }
 
 .navbar-collapse {
-    display: none;
-    position: absolute;
+    /* display: none; */
+    /* position: absolute; */
     top: 100%;
-    right: 0;
+    /* right: 0; */
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    min-width: 200px;
+    min-width: 150px;
+    white-space: nowrap;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    z-index: 999;
+}
+
+.hamburger-menu {
+    max-height: 27px;
+    max-width: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .navbar-collapse.show {
     display: block;
+}
+
+.dark-mode .navbar-collapse {
+
+    background-color: #1c242c;
+    color: #f8f9fa;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .navbar-toggler-icon,

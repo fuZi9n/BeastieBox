@@ -15,8 +15,17 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     <title>BeastieBox Feed & Watch</title>
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="Styles/main.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSGFpoO9liABqvAV7z2F//n1t7/Tv95TSTR97tVg+rnjMby0VfH"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybB5IXK1zq+3vlvzr6X5//aJ5FKzA5Y5f+PEYg8z5kkpp2olz"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8F+ACY4xxD4h4a4wKeY3XEq3S2xC3jU9XlqD6zP+gAU6ri"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Styles/main.css">
 </head>
 
 <body>
@@ -26,17 +35,40 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                 <div class="circle"></div>
             </div>
             <span class="navbar-brand mx-auto">BeastyBox</span>
+
+            <!--HAMBURGER menu-->
+            <div class="hamburger-menu">
+                <button id="hamburger-button" class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <!--######subscription.php NOT IMPLENTED!######-->
+                            <!--######subscription.php NOT IMPLENTED!######-->
+                            <!--######subscription.php NOT IMPLENTED!######-->
+                            <!--######subscription.php NOT IMPLENTED!######-->
+                            <!--######subscription.php NOT IMPLENTED!######-->
+                            <a id="subscription" class="nav-link" href="subscription.php">Subscription</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="password_reset.php">Reset Password</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="signout" class="nav-link" href="logout.php">Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
 
     <header class="container">
-        <h3 class="display-5 text-center"> Welcome
+        <h3 class="welcome"> Welcome
             <?php echo $_SESSION['username']; ?>!
-            </h2>
-            <div class="text-center mb-4">
-                <a href="password_reset.php" class="btn btn-outline-warning">Reset Password</a>
-                <a href="logout.php" class="btn btn-outline-danger">Sign Out</a>
-            </div>
+        </h3>
     </header>
 
     <main>
