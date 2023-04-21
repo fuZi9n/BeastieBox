@@ -410,3 +410,7 @@ body.dark-mode {
     width: 100%;
     height: 100%;
 }
+
+.dark-mode .cardiogram {
+    filter: invert(0.8);
+}

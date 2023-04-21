@@ -84,7 +84,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                             </div>
                         </div>
                         <div id="cardiogramContainer">
-                            <canvas id="cardiogramCanvas"></canvas>
+                            <canvas id="cardiogramCanvas" class="cardiogram"></canvas>
                         </div>
                         <div id="pulseStats" class="d-flex justify-content-between">
                             <div class="pulse-stat">Avg: <span id="avgPulse">--</span> BPM</div>
