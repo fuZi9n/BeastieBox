@@ -41,16 +41,19 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                 <button id="hamburger-button" class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <!--<span class="navbar-toggler-icon"></span>-->
+                    <span class="line first"></span>
+                    <span class="line second"></span>
+                    <span class="line third"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <!--############-->
+                            <!--############-->
                             <!--######subscription.php NOT IMPLENTED!######-->
-                            <!--######subscription.php NOT IMPLENTED!######-->
-                            <!--######subscription.php NOT IMPLENTED!######-->
-                            <!--######subscription.php NOT IMPLENTED!######-->
-                            <!--######subscription.php NOT IMPLENTED!######-->
+                            <!--############-->
+                            <!--############-->
                             <a id="subscription" class="nav-link" href="subscription.php">Subscription</a>
                         </li>
                         <li class="nav-item">

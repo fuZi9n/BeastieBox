@@ -21,8 +21,6 @@ feedingBtn.addEventListener('click', () => {
 
 
 
-
-
 // Dark mode toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.querySelector('body');
@@ -31,7 +29,6 @@ darkModeToggle.addEventListener('click', () => {
     darkModeToggle.classList.toggle('active');
     body.classList.toggle('dark-mode');
 });
-
 
 
 
@@ -130,8 +127,6 @@ setInterval(updatePulse, 2000); // Update pulse every 2 seconds
 
 
 
-
-
 // Food chart
 const foodChartElement = document.getElementById('foodChart');
 let foodData = Array(3).fill(0);
@@ -194,17 +189,18 @@ setInterval(decreaseFoodData, 2000);
 
 
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Get all the necessary elements
     const navbarToggler = document.querySelector(".navbar-toggler");
     const navbarMenu = document.querySelector(".navbar-collapse");
+    const menuLines = document.querySelectorAll(".navbar-toggler .line");
 
     // Attach a click event listener to the navbar toggler
     navbarToggler.addEventListener("click", function () {
         navbarMenu.classList.toggle("show");
+        for (var i = 0; i < menuLines.length; i++) {
+            menuLines[i].classList.toggle('active');
+        }
     });
 
     // Close the menu when a link is clicked

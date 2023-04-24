@@ -57,10 +57,52 @@
     font-weight: bold;
 }
 
+/* Navbar hamburger*/
 .navbar-toggler {
-    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.line {
+    width: 22px;
+    height: 3px;
+    background-color: #000;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    transition: transform .5s ease-out;
+}
+
+.dark-mode .line {
+    background-color: #f8f9fa;
+}
+
+.first {
+    transform-origin: top left;
+}
+
+.first.active {
+    transform: rotate(45deg);
+}
+
+.second {
+    transition: transform .25s ease-out;
+}
+
+.second.active {
+    transition: transform .25s ease-out;
+    transform: rotateY(90deg);
+}
+
+.third {
+    transform-origin: bottom left;
+}
+
+.third.active {
+    transform: rotate(-45deg);
+}
+
+/*
 .navbar-toggler-icon {
     display: inline-block;
     width: 20px;
@@ -96,6 +138,7 @@
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
     transform: translateY(-6px) rotate(-45deg);
 }
+*/
 
 .navbar-nav {
     list-style-type: none;
@@ -181,7 +224,6 @@
 .dark-mode .navbar-toggler-icon::after {
     background-color: #f8f9fa;
 }
-
 
 
 
