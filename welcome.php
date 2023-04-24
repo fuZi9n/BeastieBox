@@ -49,6 +49,9 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <a id="plugins" class="nav-link" href="plugins.php">Plugins</a>
+                        </li>
+                        <li class="nav-item">
                             <!--############-->
                             <!--############-->
                             <!--######subscription.php NOT IMPLENTED!######-->
