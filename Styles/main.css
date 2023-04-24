@@ -179,8 +179,11 @@
 }
 
 #signout:hover {
-    color: #ca5555;
-    font-weight: bold;
+    color: #ff4b4b;
+}
+
+#reset-password:hover {
+    color: #ff9900;
 }
 
 .navbar-collapse {

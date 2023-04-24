@@ -60,7 +60,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                             <a id="subscription" class="nav-link" href="subscription.php">Subscription</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="password_reset.php">Reset Password</a>
+                            <a id="reset-password" class="nav-link" href="password_reset.php">Reset Password</a>
                         </li>
                         <li class="nav-item">
                             <a id="signout" class="nav-link" href="logout.php">Sign out</a>
