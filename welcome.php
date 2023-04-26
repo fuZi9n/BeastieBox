@@ -34,7 +34,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
             <div id="darkModeToggle" class="dark-mode-toggle">
                 <div class="circle"></div>
             </div>
-            <span class="navbar-brand mx-auto">BeastyBox</span>
+            <span class="navbar-brand mx-auto">BeastieBox</span>
 
             <!--HAMBURGER menu-->
             <div class="hamburger-menu">
