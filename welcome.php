@@ -122,7 +122,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                     <div class="box">
                         <h3>Live Camera</h3>
                         <p>Live feed from your camera: (Living Room 1)</p>
-                        <video id="liveCamera" controls loop muted>
+                        <video id="liveCamera" controls autoplay loop muted>
                             <source src="Videos/Dogs.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
