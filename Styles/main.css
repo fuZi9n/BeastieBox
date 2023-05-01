@@ -244,18 +244,24 @@
 }
 
 .pulse-stat {
+    padding-left: 15px;
+    padding-right: 15px;
     font-size: 1rem;
     font-weight: bold;
 }
 
 #pulseStats {
     margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .pulse-container {
@@ -311,10 +317,47 @@
     margin-bottom: 30px;
 }
 
+
+
+
+
+
+
+
+
 .centerFeeding {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+}
+
+.gearsContainer {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+@media (max-width: 480px) {
+    .centerFeeding {
+        flex-direction: column;
+    }
+
+    .buttonContainer {
+        margin-bottom: 0;
+    }
 }
 
 .center-vertically {
@@ -324,43 +367,50 @@
     height: 100%;
 }
 
-#gearsContainer {
+.gearsContainer {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     width: 100px;
     height: 50px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
-#bigGear,
-#smallGear {
+#feedingBigGear,
+#feedingSmallGear,
+#waterBigGear,
+#waterSmallGear {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
 
-#bigGear {
+#feedingBigGear,
+#waterBigGear {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     top: 0;
     left: 0;
     animation-duration: 3s;
 }
 
-#smallGear {
+#feedingSmallGear,
+#waterSmallGear {
     position: absolute;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     top: 20px;
-    left: 50px;
+    left: 40px;
     animation-duration: 1.5s;
 }
 
-.dark-mode #bigGear {
+.dark-mode #feedingBigGear,
+.dark-mode #waterBigGear {
     filter: invert(0.7);
 }
 
-.dark-mode #smallGear {
+.dark-mode #feedingSmallGear,
+.dark-mode #waterSmallGear {
     filter: invert(0.7);
 }
 
@@ -375,7 +425,7 @@
 }
 
 #feedingBtn {
-    background-color: #0077ff;
+    background-color: #ff9400;
     border: none;
     color: white;
     font-size: 1rem;
@@ -385,26 +435,57 @@
     margin-right: 10px;
     transition: background-color 0.3s;
     outline: none;
+    width: 150px;
+    text-align: center;
 }
 
 #feedingBtn:hover {
-    background-color: #25c457;
+    background-color: #33c562;
 }
 
 .dark-mode #feedingBtn {
-    background-color: #475b72;
-    border: none;
+    background-color: #977c34;
     color: white;
-    font-size: 1rem;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .dark-mode #feedingBtn:hover {
     background-color: #32884d;
 }
+
+#waterBtn {
+    background-color: #1f7de9;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+    outline: none;
+    width: 150px;
+    text-align: center;
+}
+
+#waterBtn:hover {
+    background-color: #33c562;
+}
+
+.dark-mode #waterBtn {
+    background-color: #475b72;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.dark-mode #waterBtn:hover {
+    background-color: #32884d;
+}
+
+
+
+
+
 
 /* Dark Mode Toggle */
 .dark-mode-toggle {
@@ -468,14 +549,24 @@ body.dark-mode {
 
 
 
-#cardiogramContainer {
+.sensor-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.sensor-element {
+    margin-bottom: 40px;
+}
+
+.cardiogram-container {
     width: 100%;
     height: 150px;
+    padding: 15px;
     overflow: hidden;
     position: relative;
 }
 
-#cardiogramCanvas {
+.cardiogram-canvas {
     display: block;
     width: 100%;
     height: 100%;
@@ -483,4 +574,34 @@ body.dark-mode {
 
 .dark-mode .cardiogram {
     filter: invert(0.8);
+}
+
+.sensor-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sensor-container::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.sensor-container::-webkit-scrollbar-thumb {
+    background-color: #808185;
+    border-radius: 8px;
+}
+
+.sensor-container::-webkit-scrollbar-thumb:hover {
+    background-color: #696969;
+}
+
+.dark-mode .sensor-container::-webkit-scrollbar-track {
+    background-color: #343a40;
+}
+
+.dark-mode .sensor-container::-webkit-scrollbar-thumb {
+    background-color: #212122;
+}
+
+.dark-mode .sensor-container::-webkit-scrollbar-thumb:hover {
+    background-color: #1c1c20;
 }

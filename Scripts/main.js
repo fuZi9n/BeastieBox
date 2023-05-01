@@ -1,23 +1,39 @@
 // Feeding button animation
 const feedingBtn = document.getElementById('feedingBtn');
-const bigGear = document.getElementById('bigGear');
-const smallGear = document.getElementById('smallGear');
+const feedingBigGear = document.getElementById('feedingBigGear');
+const feedingSmallGear = document.getElementById('feedingSmallGear');
+
+const waterBtn = document.getElementById('waterBtn');
+const waterBigGear = document.getElementById('waterBigGear');
+const waterSmallGear = document.getElementById('waterSmallGear');
 
 feedingBtn.addEventListener('click', () => {
-    bigGear.classList.remove('hidden');
-    smallGear.classList.remove('hidden');
-    bigGear.style.animationName = 'rotate';
-    smallGear.style.animationName = 'rotate';
+    feedingBigGear.classList.remove('hidden');
+    feedingSmallGear.classList.remove('hidden');
+    feedingBigGear.style.animationName = 'rotate';
+    feedingSmallGear.style.animationName = 'rotate';
 
     setTimeout(() => {
-        bigGear.style.animationName = '';
-        smallGear.style.animationName = '';
-        bigGear.classList.add('hidden');
-        smallGear.classList.add('hidden');
+        feedingBigGear.style.animationName = '';
+        feedingSmallGear.style.animationName = '';
+        feedingBigGear.classList.add('hidden');
+        feedingSmallGear.classList.add('hidden');
     }, 3000);
 });
 
+waterBtn.addEventListener('click', () => {
+    waterBigGear.classList.remove('hidden');
+    waterSmallGear.classList.remove('hidden');
+    waterBigGear.style.animationName = 'rotate';
+    waterSmallGear.style.animationName = 'rotate';
 
+    setTimeout(() => {
+        waterBigGear.style.animationName = '';
+        waterSmallGear.style.animationName = '';
+        waterBigGear.classList.add('hidden');
+        waterSmallGear.classList.add('hidden');
+    }, 3000);
+});
 
 
 
@@ -32,97 +48,129 @@ darkModeToggle.addEventListener('click', () => {
 
 
 
-
-
-
 // Cardiogram animation
-const avgPulse = document.getElementById('avgPulse');
-const minPulse = document.getElementById('minPulse');
-const maxPulse = document.getElementById('maxPulse');
-
-const cardiogramCanvas = document.getElementById('cardiogramCanvas');
-const ctx = cardiogramCanvas.getContext('2d');
-const pulseValue = document.getElementById('pulseValue');
-
-cardiogramCanvas.width = cardiogramCanvas.clientWidth;
-cardiogramCanvas.height = cardiogramCanvas.clientHeight;
-
-let pulseValues = [];
-let minPulseValue = Number.MAX_VALUE;
-let maxPulseValue = Number.MIN_VALUE;
-let sumPulseValues = 0;
-let pulseCount = 0;
-
-let cardiogramPoints = [];
-let cardiogramSpeed = 0.2;
-let frequency = 6;
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+// Function to create multiple heartbeat sensor elements
+function createSensorElement(sensorName) {
+    const sensorElem = document.createElement('div');
+    sensorElem.className = 'sensor-element';
+    sensorElem.innerHTML = `
+        <div class="header-container">
+            <h5>${sensorName}:</h5>
+            <div class="pulse-container">
+                <p id="pulse"><span id="pulseValue">--</span> BPM</p>
+            </div>
+        </div>
+        <div class="cardiogram-container">
+            <canvas class="cardiogram-canvas cardiogram"></canvas>
+        </div>
+        <div class="pulse-stats d-flex justify-content-between">
+            <div class="pulse-stat">Avg: <span class="avg-pulse">--</span></div>
+            <div class="pulse-stat">Min: <span class="min-pulse">--</span></div>
+            <div class="pulse-stat">Max: <span class="max-pulse">--</span></div>
+        </div>
+    `;
+    return sensorElem;
 }
 
-let counter = 0;
+// Add this code to create multiple heartbeat sensors
+const sensorContainer = document.getElementById('sensorContainer');
+const sensorNames = ['Poppy 1', 'Poppy 2', 'Poppy 3']; // Add more names as needed
 
-function drawCardiogram() {
-    ctx.clearRect(0, 0, cardiogramCanvas.width, cardiogramCanvas.height);
+sensorNames.forEach((sensorName) => {
+    const sensorElem = createSensorElement(sensorName);
+    sensorContainer.appendChild(sensorElem);
+});
 
-    counter++;
+// Modify the existing code to handle multiple heartbeat sensors
+const sensorElements = document.getElementsByClassName('sensor-element');
 
-    if (counter % frequency === 0) {
-        cardiogramPoints.push({
-            x: cardiogramCanvas.width,
-            y: cardiogramCanvas.height / 2 + getRandomInt(-30, 30),
-        });
+for (const sensorElem of sensorElements) {
+    const avgPulse = sensorElem.querySelector('.avg-pulse');
+    const minPulse = sensorElem.querySelector('.min-pulse');
+    const maxPulse = sensorElem.querySelector('.max-pulse');
+
+    const cardiogramCanvas = sensorElem.querySelector('.cardiogram-canvas');
+    const ctx = cardiogramCanvas.getContext('2d');
+    const pulseValue = sensorElem.querySelector('#pulseValue'); // Updated selector
+
+    cardiogramCanvas.width = cardiogramCanvas.clientWidth;
+    cardiogramCanvas.height = cardiogramCanvas.clientHeight;
+
+    let pulseValues = [];
+    let minPulseValue = Number.MAX_VALUE;
+    let maxPulseValue = Number.MIN_VALUE;
+    let sumPulseValues = 0;
+    let pulseCount = 0;
+
+    let cardiogramPoints = [];
+    let cardiogramSpeed = 0.2;
+    let frequency = 6;
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
+    let counter = 0;
 
-    for (let i = 1; i < cardiogramPoints.length; i++) {
-        const point = cardiogramPoints[i];
+    function drawCardiogram() {
+        ctx.clearRect(0, 0, cardiogramCanvas.width, cardiogramCanvas.height);
 
-        point.x -= cardiogramSpeed;
+        counter++;
 
-        if (i !== 1) {
-            ctx.moveTo(cardiogramPoints[i - 1].x, cardiogramPoints[i - 1].y);
-            ctx.lineTo(point.x, point.y);
+        if (counter % frequency === 0) {
+            cardiogramPoints.push({
+                x: cardiogramCanvas.width,
+                y: cardiogramCanvas.height / 2 + getRandomInt(-30, 30),
+            });
         }
+
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+
+        for (let i = 1; i < cardiogramPoints.length; i++) {
+            const point = cardiogramPoints[i];
+
+            point.x -= cardiogramSpeed;
+
+            if (i !== 1) {
+                ctx.moveTo(cardiogramPoints[i - 1].x, cardiogramPoints[i - 1].y);
+                ctx.lineTo(point.x, point.y);
+            }
+        }
+
+        ctx.stroke();
+        cardiogramPoints = cardiogramPoints.filter((point) => point.x > 0);
+        requestAnimationFrame(drawCardiogram);
     }
 
-    ctx.stroke();
-    cardiogramPoints = cardiogramPoints.filter((point) => point.x > 0);
+    function updatePulse() {
+        const pulse = getRandomInt(50, 100);
+        pulseValue.innerText = pulse;
 
-    requestAnimationFrame(drawCardiogram);
-}
+        // Update pulse statistics
+        if (pulseValues.length >= 100) {
+            const oldestPulse = pulseValues.shift();
+            sumPulseValues -= oldestPulse;
+        }
+        pulseValues.push(pulse);
+        pulseCount++;
+        minPulseValue = Math.min(minPulseValue, pulse);
+        maxPulseValue = Math.max(maxPulseValue, pulse);
+        sumPulseValues += pulse;
 
-function updatePulse() {
-    const pulse = getRandomInt(50, 100);
-    pulseValue.innerText = pulse;
-
-    // Update pulse statistics
-    if (pulseValues.length >= 100) {
-        const oldestPulse = pulseValues.shift();
-        sumPulseValues -= oldestPulse;
+        // Display updated pulse statistics
+        avgPulse.innerText = (sumPulseValues / pulseValues.length).toFixed(1);
+        minPulse.innerText = minPulseValue;
+        maxPulse.innerText = maxPulseValue;
     }
-    pulseValues.push(pulse);
-    pulseCount++;
-    minPulseValue = Math.min(minPulseValue, pulse);
-    maxPulseValue = Math.max(maxPulseValue, pulse);
-    sumPulseValues += pulse;
 
-    // Display updated pulse statistics
-    avgPulse.innerText = (sumPulseValues / pulseValues.length).toFixed(1);
-    minPulse.innerText = minPulseValue;
-    maxPulse.innerText = maxPulseValue;
+    updatePulse();
+    drawCardiogram(); // Initial call
+    setInterval(updatePulse, 2000); // Update pulse every 2 seconds
 }
-
-updatePulse();
-drawCardiogram(); // Initial call
-setInterval(updatePulse, 2000); // Update pulse every 2 seconds
-
 
 
 
@@ -130,6 +178,7 @@ setInterval(updatePulse, 2000); // Update pulse every 2 seconds
 // Food chart
 const foodChartElement = document.getElementById('foodChart');
 let foodData = Array(3).fill(0);
+let waterData = Array(3).fill(0);
 
 function createFoodChart() {
     return new Chart(foodChartElement, {
@@ -140,11 +189,18 @@ function createFoodChart() {
                 {
                     label: 'Food Level',
                     data: foodData,
+                    backgroundColor: 'rgba(255, 183, 0, 0.2)',
+                    borderColor: 'rgba(255, 183, 0, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Water Level',
+                    data: waterData,
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1
                 },
-            ]
+            ],
         },
         options: {
             scales: {
@@ -159,6 +215,12 @@ function createFoodChart() {
 
 const foodChart = createFoodChart();
 
+// Random value between min and max
+function getRandomValue(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Food
 feedingBtn.addEventListener('click', () => {
     for (let i = 0; i < foodData.length; i++) {
         foodData[i] += 10;
@@ -168,10 +230,6 @@ feedingBtn.addEventListener('click', () => {
     }
     foodChart.update();
 });
-
-function getRandomValue(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 function decreaseFoodData() {
     const index = getRandomValue(0, foodData.length - 1);
@@ -183,6 +241,28 @@ function decreaseFoodData() {
     foodChart.update();
 }
 
+// Water
+waterBtn.addEventListener('click', () => {
+    for (let i = 0; i < waterData.length; i++) {
+        waterData[i] += 10;
+        if (waterData[i] > 100) {
+            waterData[i] = 100;
+        }
+    }
+    foodChart.update();
+});
+
+function decreaseWaterData() {
+    const index = getRandomValue(0, waterData.length - 1);
+    const decreaseValue = getRandomValue(1, 5);
+    waterData[index] -= decreaseValue;
+    if (waterData[index] < 0) {
+        waterData[index] = 0;
+    }
+    foodChart.update();
+}
+
+setInterval(decreaseWaterData, 2000);
 setInterval(decreaseFoodData, 2000);
 
 

@@ -34,7 +34,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
             <div id="darkModeToggle" class="dark-mode-toggle">
                 <div class="circle"></div>
             </div>
-            <span class="navbar-brand mx-auto">BeastieBox</span>
+            <span class="navbar-brand mx-auto">BeastyBox</span>
 
             <!--HAMBURGER menu-->
             <div class="hamburger-menu">
@@ -82,21 +82,8 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
             <div class="row equal-height">
                 <div class="col-md-6 mb-30">
                     <div class="box mb-4 full-height">
-                        <h3>Heartbeat Sensor</h3>
-                        <div class="header-container">
-                            <h5>(Poppy 1):</h5>
-                            <div class="pulse-container">
-                                <p id="pulse"><span id="pulseValue">--</span> BPM</p>
-                            </div>
-                        </div>
-                        <div id="cardiogramContainer">
-                            <canvas id="cardiogramCanvas" class="cardiogram"></canvas>
-                        </div>
-                        <div id="pulseStats" class="d-flex justify-content-between">
-                            <div class="pulse-stat">Avg: <span id="avgPulse">--</span> BPM</div>
-                            <div class="pulse-stat">Min: <span id="minPulse">--</span> BPM</div>
-                            <div class="pulse-stat">Max: <span id="maxPulse">--</span> BPM</div>
-                        </div>
+                        <h3>Heartbeat Sensors</h3>
+                        <div id="sensorContainer" class="sensor-container"></div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-30">
@@ -107,10 +94,21 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
                                 <canvas id="foodChart"></canvas>
                             </div>
                             <div class="centerFeeding">
-                                <button id="feedingBtn">Feeding time!</button>
-                                <div id="gearsContainer">
-                                    <img src="Images/gear.png" id="bigGear" class="hidden" alt="big gear">
-                                    <img src="Images/gear.png" id="smallGear" class="hidden" alt="small gear">
+                                <div class="buttonContainer">
+                                    <button id="feedingBtn">Feeding time!</button>
+                                    <div class="gearsContainer">
+                                        <img src="Images/gear.png" id="feedingBigGear" class="hidden" alt="big gear">
+                                        <img src="Images/gear.png" id="feedingSmallGear" class="hidden"
+                                            alt="small gear">
+                                    </div>
+                                </div>
+
+                                <div class="buttonContainer">
+                                    <button id="waterBtn">Water time!</button>
+                                    <div class="gearsContainer">
+                                        <img src="Images/gear.png" id="waterBigGear" class="hidden" alt="big gear">
+                                        <img src="Images/gear.png" id="waterSmallGear" class="hidden" alt="small gear">
+                                    </div>
                                 </div>
                             </div>
                         </div>
