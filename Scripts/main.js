@@ -96,15 +96,15 @@ for (const sensorElem of sensorElements) {
     cardiogramCanvas.width = cardiogramCanvas.clientWidth;
     cardiogramCanvas.height = cardiogramCanvas.clientHeight;
 
-    let pulseValues = [];
-    let minPulseValue = Number.MAX_VALUE;
-    let maxPulseValue = Number.MIN_VALUE;
-    let sumPulseValues = 0;
-    let pulseCount = 0;
+    var pulseValues = [];
+    var minPulseValue = Number.MAX_VALUE;
+    var maxPulseValue = Number.MIN_VALUE;
+    var sumPulseValues = 0;
+    var pulseCount = 0;
 
-    let cardiogramPoints = [];
-    let cardiogramSpeed = 0.2;
-    let frequency = 6;
+    var cardiogramPoints = [];
+    var cardiogramSpeed = 0.2;
+    var frequency = 6;
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -112,7 +112,7 @@ for (const sensorElem of sensorElements) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    let counter = 0;
+    var counter = 0;
 
     function drawCardiogram() {
         ctx.clearRect(0, 0, cardiogramCanvas.width, cardiogramCanvas.height);
@@ -177,8 +177,8 @@ for (const sensorElem of sensorElements) {
 
 // Food chart
 const foodChartElement = document.getElementById('foodChart');
-let foodData = Array(3).fill(0);
-let waterData = Array(3).fill(0);
+var foodData = Array(3).fill(0);
+var waterData = Array(3).fill(0);
 
 function createFoodChart() {
     return new Chart(foodChartElement, {
