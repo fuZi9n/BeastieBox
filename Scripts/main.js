@@ -130,7 +130,7 @@ for (const sensorElem of sensorElements) {
         ctx.lineWidth = 2;
         ctx.beginPath();
 
-        for (let i = 1; i < cardiogramPoints.length; i++) {
+        for (var i = 1; i < cardiogramPoints.length; i++) {
             const point = cardiogramPoints[i];
 
             point.x -= cardiogramSpeed;
@@ -222,7 +222,7 @@ function getRandomValue(min, max) {
 
 // Food
 feedingBtn.addEventListener('click', () => {
-    for (let i = 0; i < foodData.length; i++) {
+    for (var i = 0; i < foodData.length; i++) {
         foodData[i] += 10;
         if (foodData[i] > 100) {
             foodData[i] = 100;
@@ -243,7 +243,7 @@ function decreaseFoodData() {
 
 // Water
 waterBtn.addEventListener('click', () => {
-    for (let i = 0; i < waterData.length; i++) {
+    for (var i = 0; i < waterData.length; i++) {
         waterData[i] += 10;
         if (waterData[i] > 100) {
             waterData[i] = 100;
