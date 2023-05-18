@@ -219,7 +219,7 @@ for (const sensorElem of sensorElements) {
 
     var cardiogramPoints = [];
     var cardiogramSpeed = 0.05;
-    var frequency = 14;
+    var frequency = 18;
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
