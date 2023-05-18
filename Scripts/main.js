@@ -72,7 +72,6 @@ function createSensorElement(sensorName) {
     return sensorElem;
 }
 
-// Add this code to create multiple heartbeat sensors
 const sensorContainer = document.getElementById('sensorContainer');
 const sensorNames = ['Poppy 1', 'Poppy 2', 'Poppy 3']; // Add more names as needed
 
@@ -81,7 +80,6 @@ sensorNames.forEach((sensorName) => {
     sensorContainer.appendChild(sensorElem);
 });
 
-// Modify the existing code to handle multiple heartbeat sensors
 const sensorElements = document.getElementsByClassName('sensor-element');
 
 for (const sensorElem of sensorElements) {
@@ -171,9 +169,6 @@ for (const sensorElem of sensorElements) {
     drawCardiogram(); // Initial call
     setInterval(updatePulse, 2000); // Update pulse every 2 seconds
 }
-
-
-
 
 // Food chart
 const foodChartElement = document.getElementById('foodChart');
@@ -267,15 +262,12 @@ setInterval(decreaseFoodData, 2000);
 
 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Get all the necessary elements
     const navbarToggler = document.querySelector(".navbar-toggler");
     const navbarMenu = document.querySelector(".navbar-collapse");
     const menuLines = document.querySelectorAll(".navbar-toggler .line");
 
-    // Attach a click event listener to the navbar toggler
     navbarToggler.addEventListener("click", function () {
         navbarMenu.classList.toggle("show");
         for (var i = 0; i < menuLines.length; i++) {

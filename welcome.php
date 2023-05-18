@@ -16,15 +16,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-qdQEsAI45WFCO5QwXBelBe1rR9Nwiss4rGEqiszC+9olH1ScrLrMQr1KmDR964uZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSGFpoO9liABqvAV7z2F//n1t7/Tv95TSTR97tVg+rnjMby0VfH"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz4fnFO9gybB5IXK1zq+3vlvzr6X5//aJ5FKzA5Y5f+PEYg8z5kkpp2olz"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-pzjw8f+ua7Kw1TIq0v8F+ACY4xxD4h4a4wKeY3XEq3S2xC3jU9XlqD6zP+gAU6ri"
-        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styles/main.css">
 </head>
 
@@ -34,7 +25,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
             <div id="darkModeToggle" class="dark-mode-toggle">
                 <div class="circle"></div>
             </div>
-            <span class="navbar-brand mx-auto">BeastyBox</span>
+            <span class="navbar-brand mx-auto">BeastieBox</span>
 
             <!--HAMBURGER menu-->
             <div class="hamburger-menu">
@@ -151,7 +142,6 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['loggedin'] !== false) {
     </footer>
 
     <script src="Scripts/main.js"></script>
-    <script src="Scripts/heartbeatSensor.js"></script>
 </body>
 
 </html>
