@@ -1,8 +1,8 @@
 <?php
 	// Database credentials
-	define('DB_SERVER', '38.242.128.50');
-	define('DB_USERNAME', 'bruger');
-	define('DB_PASSWORD', 'Kode1234!');
+	define('DB_SERVER', 'Your_DB_IP');
+	define('DB_USERNAME', 'USERNAME');
+	define('DB_PASSWORD', 'CODE');
 	define('DB_NAME', 'login_system');
 
 	// Attempt to connect to MySQL database
